@@ -1,0 +1,33 @@
+
+<main class="login-design">
+    <div class="waves text-center">
+     <img src="./../../../assets/img/libro.png" class="rounded border-white" alt="logo">
+        <p class="custom-font fs-1 m-0 p-0 text-center text-light text-dark fw-bolder">Biblioteca Kinal</p>
+    </div>
+    <div class="login">
+      <div class="login-data">
+        <img class="logo1" src="../../../assets/img/bloquear.png" alt="" ><br>
+        <br>
+        <h1 class="text-secondary fs-1 fw-bolder mb-4">Iniciar Sesión</h1>     
+           <form #login="ngForm" (ngSubmit)="onSubmit(login)" class="login-form">
+          <div class="input-group">
+            <label class="input-fill">
+              <input  [(ngModel)]="user.username" type="email" name="email" id="email" required  >
+              
+              <span class="input-label">Usuario</span>
+            </label>
+          </div>
+          <div class="input-group">
+            <label class="input-fill">
+              <input [(ngModel)]="user.password" type="password" name="password" id="password" required>
+              
+              <span class="input-label">Contraseña</span>
+            </label>
+          </div>
+          <a href="#">¿Necesitas una Cuenta?</a>
+          <input type="submit" value="Iniciar Sesión"[disabled]="!login.form.valid" class="btn-login mx-2" >
+          <input type="submit" value="Cancelar" routerLink="/home" class="btn-login mx-2" >
+        </form>
+      </div>
+    </div>
+  </main>

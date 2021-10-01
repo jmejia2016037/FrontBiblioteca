@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-dark p-2 pe-4 ps-4">
+    <a class="navbar-brand fs-2" routerLink="/home"><i class="bi bi-kanban-fill"></i></a>
+     <img src="../../../assets/img/leer.png" alt="" width="50" height="50">
+    <div class="collapse navbar-collapse mobile-view" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto ps-4">
+            <li class="nav-item">
+                <a class="nav-link enter mx-2" routerLink="/home">Inicio</a>
+            </li>
+            <li *ngIf="token == null" class="nav-item">
+                <a class="nav-link enter " routerLink="/login">Login</a>
+            </li>
+            <li *ngIf="token == null" class="nav-item">
+                <a class="nav-link enter mx-2"  data-bs-toggle="modal" data-bs-target="#exampleModal" >About</a>
+            </li>
+            <li *ngIf="token != null" class="nav-item">
+                <a class="nav-link enter" routerLink="/books">Libros</a>
+            </li>
+            <li *ngIf="token != null" class="nav-item">
+                <a class="nav-link enter" routerLink="/reviews">Revistas</a>
+            </li>
+            <li *ngIf="token != null" class="nav-item">
+                <a class="nav-link enter" routerLink="/bookreview">Mi libros y Revistas</a>
+            </li>
+        </ul>
+        <div *ngIf="token != null" class="btn-group dropstart dark-enters dropdown-web">
+            <button type="button" class="btn dropdown-toggle fs-3 text-light" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-gear-wide-connected text-light"></i>
+            </button>
+            <ul class="dropdown-menu text-dark">
+                <li><a class="dropdown-item dark-enters" type="button" routerLink="/history">Historial</a></li>
+                <!-- <li><a class="dropdown-item dark-enters" type="button" routerLink="/account">Mi cuenta</a></li> -->
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a type="button" class="dropdown-item dark-enters" (click)="logOut()">Salir</a></li>
+            </ul>
+        </div>
+        <div *ngIf="token != null" class="dropdown dropdown-mobile dark-enters">
+            <div class="d-flex">
+                <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Configuracion
+                </button>
+            </div>
+            <ul class="dropdown-menu text-dark">
+                <li><a class="dropdown-item dark-enters" type="button" routerLink="/history">Historial</a></li>
+                <li><a class="dropdown-item dark-enters" type="button" routerLink="/account">Mi cuenta</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item dark-enters" type="button">Salir</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Informacion del Alumno</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+           <div class="text-center">
+            <img src="../../../assets/img/man.png" width="100" height="100" alt="">
+           </div>
+           <hr>
+          <h6>Nombres y Apellidos:<samp> Jeffrey Daniel Mejia Solis </samp></h6>
+          <h6>Carnet:<span> 2016037 </span></h6>
+          <h6>Codigo Tecnico:<span> IN6AM </span></h6>
+        </div>
+        <br>
+        <div class="text-center">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+        <br>
+      </div>
+    </div>
+  </div>

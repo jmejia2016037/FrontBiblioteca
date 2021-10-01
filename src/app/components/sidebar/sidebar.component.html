@@ -1,0 +1,39 @@
+<div class="sidbar-admin bg-dark p-4 text-center d-flex flex-column justify-content-between align-items-center">
+
+    <div>
+        <img class="logo rounded" src="../../../assets/img/libro.png" width="75" height="75" routerLink="/home">
+        <h2 class="font-weight-bolder text-monospace"></h2>
+    </div>
+
+    <nav id="list-example" class="list-group">
+        <ul class="nav flex-column text-white text-start fw-bolder">
+            <li class="nav-item mb-1">
+                <a class="nav-link" routerLink="/dashboard"><i class="bi bi-house-door-fill me-2"></i>Reportes</a>
+            </li>
+            <li class="nav-item mb-1">
+                <a class="nav-link" routerLink="/books"><i class="bi bi-grid me-2"></i> Libros</a>
+            </li>
+            <li class="nav-item mb-1">
+                <a class="nav-link" routerLink="/reviews"><i class="bi bi-people-fill me-2"></i> Revistas</a>
+            </li>
+            <li class="nav-item mb-1">
+                <a class="nav-link" routerLink="/bookreview"><i class="bi bi-people-fill me-2"></i>Mi libros y Revistas</a>
+            </li>
+            <li class="nav-item mb-1">
+                <a class="nav-link" routerLink="/users"><i class="bi bi-people-fill me-2"></i> Usuarios</a>
+            </li>
+            <li class="nav-item mb-1">
+                <a class="nav-link" routerLink="/history"><i class="bi bi-people-fill me-2"></i> Historial</a>
+            </li>
+        </ul>
+    </nav>
+
+    <footer>
+        <img  src="../../../assets/img/user.png" width="70" height="70" alt=""  >
+        <br>    
+        <br>
+        <button type="button" class="btn btn-outline-light" (click)="logOut()">
+            Cerrar sesión
+        </button>
+    </footer>
+</div>
